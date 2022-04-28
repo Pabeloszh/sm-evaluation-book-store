@@ -1,0 +1,4 @@
+<table class="table">
+    <app-book-list-header></app-book-list-header>
+    <app-book-list-item class="border-top" *ngFor="let book of books; let i = index" [book]="book" [i]="i"></app-book-list-item>
+</table>

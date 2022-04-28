@@ -1,8 +1,13 @@
 <div class="row gy-5">
   <div class="col-md text-center">
     <h1>Book Search</h1>
-    <mdb-form-control>
-      <input mdbInput type="text" id="searchInput" class="form-control" />
-    </mdb-form-control>
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="searchForm">
+      <mdb-form-control>
+        <input mdbInput type="text" id="searchInput" formControlName="searchInput" class="form-control" />
+      </mdb-form-control>
+      <button type="submit" class="btn btn-primary mt-3" [disabled]="booksService.getLoading()">Search</button>
+    </form>
+    <app-book-count *ngIf="booksService.getCount()"></app-book-count>
+    <app-book-list [books]="booksService.getBooks()" *ngIf="booksService.getBooks().length"></app-book-list>
   </div>
 </div>

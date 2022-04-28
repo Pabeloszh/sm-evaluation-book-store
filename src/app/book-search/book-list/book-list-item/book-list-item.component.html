@@ -1,0 +1,15 @@
+<th>
+    <p class="mb-0">{{i + 1}}</p>
+</th>
+<td class="text-start">
+    <p class="mb-0">{{book.title}}</p>
+</td>
+<td>
+    <img [src]="'https://covers.openlibrary.org/b/id/' + book.cover_i + '.jpg'" alt="cover photo" loading="lazy"/>
+</td>
+<td class="text-start">
+    <p class="mb-0">{{separateWithComma(book.author_name)}}</p>
+</td>
+<td class="text-start">
+    <p class="mb-0">{{separateWithComma(book.publish_year)}}</p>
+</td>
